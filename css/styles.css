@@ -1,37 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    text-align: center;
+    padding: 30px;
+    background-color: #08395f;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 30px;
+    font-weight: bold;
 }
 
 #servicios {
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "item1 item2 item3";
-    gap: 10px;
-    width: 80%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 30px 20px;
 }
 
-.item1 {
-    grid-area: item1;
+#servicios article {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    transition: 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.item2 {
-    grid-area: item2;
+#servicios article:hover {
+    box-shadow: 0 12px 20px rgba(8, 57, 95, 0.15);
+    border-color: #08395f;
 }
 
-.item3 {
-    grid-area: item3;
-}
-
-.icono1 {
+#servicios article img {
     width: 100%;
+    max-width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
-.icono2 {
-    width: 100%;
+#servicios article h2 {
+    font-size: 20px;
+    color: #08395f;
+    margin-bottom: 10px;
 }
 
-.icono3 {
+#servicios article p {
+    color: #666;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+#servicios article .precio {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bb5;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+footer {
+    text-align: center;
     width: 100%;
+    padding: 20px 10px;
+}
+
+@media (min-width: 768px) {
+    #servicios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #servicios {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
